@@ -1,1 +1,26 @@
-%a チャット
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group
+        テスト
+      %ul.main-header__left-box__member-list 
+        "Member:"
+        %li.main-header__left-box__member-list__member
+        shota
+    = link_to '#' do
+      .main-header__edit-btn
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker shota
+        %p.message__upper-info__date 2019
+      %p.message__text こんにちは
+  .form
+    %form.new_message
+      .input-box
+        %input#message_content.input-box__text{:placeholder => "type a message",:type => "text",:name => "message[content]"}
+        %label.input-box__image
+          = icon('fa','image')
+          %input#message_image.input-box__image__file{:type => "file",:name => "message[image]"}
+      %input.submit-btn{:type => "submit",:name => "commit",:value => "Send"}
